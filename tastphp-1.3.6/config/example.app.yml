@@ -1,0 +1,7 @@
+version: v1.3.5
+debug: true
+secret: tastphp
+# dev | test | prod
+env: dev
+timezone: UTC
+name: tastphp
