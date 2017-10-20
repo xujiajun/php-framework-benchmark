@@ -451,12 +451,23 @@ Percentage of the requests served within a certain time (ms)
 
 run commands before test:
 
+
 ```
 composer install --optimize-autoloader
 php bin/console cache:config
 php bin/console cache:route
 
-```
+ ➜  tastphp-1.3.6 git:(master) mv config/example.app.yml config/app.yml
+➜  tastphp-1.3.6 git:(master) cat config/app.yml
+version: v1.3.6
+debug: false
+secret: tastphp
+# dev | test | prod
+env: prod
+timezone: UTC
+name: tastphp
+
+ ```
 
 ab test result:
 
