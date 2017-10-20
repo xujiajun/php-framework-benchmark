@@ -1,0 +1,23 @@
+language: php
+php:
+  - '7.0'
+  - '7.1'
+
+sudo: required
+
+env:
+  - DB=mysql
+
+install:
+  - composer install --dev
+
+services:
+  - redis-server
+before_install:
+  - phpenv config-rm xdebug.ini
+  - echo "extension = redis.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS tastphp_demo;" -uroot; fi
+script:
+  - ./vendor/bin/phpunit
+after_script:
+  - ./vendor/bin/test-reporter

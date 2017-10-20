@@ -1,0 +1,12 @@
+<phpunit bootstrap="tests/bootstrap.php" colors="true" syntaxCheck="true">
+    <testsuites>
+        <testsuite name="Tastphp framework Test Suite">
+            <directory suffix="Test.php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
